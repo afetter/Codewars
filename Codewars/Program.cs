@@ -9,8 +9,7 @@ namespace Codewars
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            //"1,3-5,7-11"
-            Console.WriteLine(RangeExtraction.Extract(new[] { 1, 3, 4, 5, 7, 8, 9, 10, 11}));
+            //Console.WriteLine(Arrays.MaxSumSubArray(new int[] { 2, 1, 5, 1, 3, 2 }, 3));
         }
 
 

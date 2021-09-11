@@ -1,6 +1,8 @@
 ﻿using Xunit;
+using Codewars;
 
-namespace Codewars.Tests
+
+namespace Tests.Codewars
 {
     public class UseNetTests
     {

@@ -1,7 +1,9 @@
 ﻿using System;
 using Xunit;
+using Codewars;
 
-namespace Codewars.Tests
+
+namespace Tests.Codewars
 {
     public class MaximumSubarrayTests
     {
