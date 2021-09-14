@@ -7,6 +7,21 @@ namespace Tests.Educative
     public class SlideWindowTests
     {
         [Fact]
+        public void MinimumWindowSubstring()
+        {
+            Assert.Equal("abdec", SlideWindow.MinimumWindowSubstring("aabdec", "abc"));
+            Assert.Equal("bca", SlideWindow.MinimumWindowSubstring("abdbca", "abc"));
+            Assert.Equal("", SlideWindow.MinimumWindowSubstring("adcad", "abc"));
+        }
+
+        [Fact]
+        public void StringAnagrams()
+        {
+            Assert.Equal("1,2", string.Join(",", SlideWindow.StringAnagrams("ppqp", "pq")));
+            Assert.Equal("2,3,4", string.Join(",", SlideWindow.StringAnagrams("abbcabc", "abc")));
+        }
+
+        [Fact]
         public void StringPermutation()
         {
             Assert.True(SlideWindow.StringPermutation("oidbcaf", "abc"));
