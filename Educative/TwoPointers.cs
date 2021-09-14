@@ -5,6 +5,7 @@ namespace Educative
 {
     public static class TwoPointers
     {
+
         public static List<List<int>> QuadrupleSumToTarget(int[] arr, int target)
         {
             var result = new List<List<int>>();
