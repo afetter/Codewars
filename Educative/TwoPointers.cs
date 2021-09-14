@@ -5,8 +5,47 @@ namespace Educative
 {
     public static class TwoPointers
     {
+        /// <summary>
+        /// Given two strings containing backspaces (identified by the character ‘#’), check if the two strings are equal.
+        /// </summary>
+        /// <param name="str1"></param>
+        /// <param name="str2"></param>
+        /// <returns></returns>
+        public static bool BackspaceCompare(string str1, string str2)
+        {
+            var aux1 = string.Empty;
+            for (int i = 0; i < str1.Length; i++)
+            {
+                if (str1[i] == '#')
+                {
+                    aux1 = aux1.Substring(0, aux1.Length - 1);
+                } 
+                else
+                {
+                    aux1 += str1[i];
+                }
+            }
+            var aux2 = string.Empty;
+            for (int i = 0; i < str2.Length; i++)
+            {
+                if (str2[i] == '#')
+                {
+                    aux2 = aux2.Substring(0, aux2.Length - 1);
+                }
+                else
+                {
+                    aux2 += str2[i];
+                }
+            }
+            return aux1 == aux2;
+        }
 
-
+        /// <summary>
+        /// Given an array of unsorted numbers and a target number, find all unique quadruplets in it, whose sum is equal to the target number.
+        /// </summary>
+        /// <param name="arr"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
         public static List<List<int>> QuadrupleSumToTarget(int[] arr, int target)
         {
             var result = new List<List<int>>();

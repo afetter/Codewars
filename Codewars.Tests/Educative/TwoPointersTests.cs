@@ -7,6 +7,15 @@ namespace Tests.Educative
     public class TwoPointersTests
     {
         [Fact]
+        public void BackspaceCompare()
+        {
+            Assert.True(TwoPointers.BackspaceCompare("xy#z", "xzz#"));
+            Assert.False(TwoPointers.BackspaceCompare("xy#z","xyz#"));
+            Assert.True(TwoPointers.BackspaceCompare("xp#", "xyz##"));
+            Assert.True(TwoPointers.BackspaceCompare("xywrrmp", "xywrrmu#p"));
+        }
+
+        [Fact]
         public void QuadrupleSumToTarget()
         {
             var x = TwoPointers.QuadrupleSumToTarget(new int[] { 4, 1, 2, -1, 1, -3 }, 1);
