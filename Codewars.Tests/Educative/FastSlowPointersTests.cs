@@ -7,18 +7,45 @@ namespace Tests.Educative
     public class FastSlowPointersTests
     {
         [Fact]
+        public void FindHappyNumber()
+        {
+            Assert.True(FastSlowPointers.HappyNumber(23));
+            Assert.False(FastSlowPointers.HappyNumber(12));
+        }
+
+        [Fact]
+        public void LinkedListCicleStart()
+        {
+            ListNode head = new ListNode(1);
+            head.Next = new ListNode(2);
+            head.Next.Next = new ListNode(3);
+            head.Next.Next.Next = new ListNode(4);
+            head.Next.Next.Next.Next = new ListNode(5);
+            head.Next.Next.Next.Next.Next = new ListNode(6);
+
+            head.Next.Next.Next.Next.Next.Next = head.Next.Next;
+            Assert.Equal(3, FastSlowPointers.FindCycleStart(head).Value);
+
+            head.Next.Next.Next.Next.Next.Next = head.Next.Next.Next;
+            Assert.Equal(4, FastSlowPointers.FindCycleStart(head).Value);
+
+            head.Next.Next.Next.Next.Next.Next = head;
+            Assert.Equal(1, FastSlowPointers.FindCycleStart(head).Value);
+        }
+
+        [Fact]
         public void LinkedListCycleLength()
         {
             ListNode head = new ListNode(1);
-            head.next = new ListNode(2);
-            head.next.next = new ListNode(3);
-            head.next.next.next = new ListNode(4);
-            head.next.next.next.next = new ListNode(5);
-            head.next.next.next.next.next = new ListNode(6);
-            head.next.next.next.next.next.next = head.next.next;
+            head.Next = new ListNode(2);
+            head.Next.Next = new ListNode(3);
+            head.Next.Next.Next = new ListNode(4);
+            head.Next.Next.Next.Next = new ListNode(5);
+            head.Next.Next.Next.Next.Next = new ListNode(6);
+            head.Next.Next.Next.Next.Next.Next = head.Next.Next;
             Assert.Equal(4, FastSlowPointers.LinkedListCycleLength(head));
 
-            head.next.next.next.next.next.next = head.next.next.next;
+            head.Next.Next.Next.Next.Next.Next = head.Next.Next.Next;
             Assert.Equal(3,FastSlowPointers.LinkedListCycleLength(head));
         }
 
@@ -26,17 +53,17 @@ namespace Tests.Educative
         public void LinkedListCycle()
         {
             ListNode head = new ListNode(1);
-            head.next = new ListNode(2);
-            head.next.next = new ListNode(3);
-            head.next.next.next = new ListNode(4);
-            head.next.next.next.next = new ListNode(5);
-            head.next.next.next.next.next = new ListNode(6);
+            head.Next = new ListNode(2);
+            head.Next.Next = new ListNode(3);
+            head.Next.Next.Next = new ListNode(4);
+            head.Next.Next.Next.Next = new ListNode(5);
+            head.Next.Next.Next.Next.Next = new ListNode(6);
             Assert.False(FastSlowPointers.LinkedListCycle(head));
 
-            head.next.next.next.next.next.next = head.next.next;
+            head.Next.Next.Next.Next.Next.Next = head.Next.Next;
             Assert.True(FastSlowPointers.LinkedListCycle(head));
 
-            head.next.next.next.next.next.next = head.next.next.next;
+            head.Next.Next.Next.Next.Next.Next = head.Next.Next.Next;
             Assert.True(FastSlowPointers.LinkedListCycle(head));
         }
     }
