@@ -5,6 +5,25 @@ namespace Educative
 {
     public static class TwoPointers
     {
+
+        public static int ShortestWindowSort(int[] arr)
+        {
+            int start = 0;
+            while (arr[start] < arr[start + 1])
+            {
+                start++;
+                if (start == arr.Length - 1)
+                    return 0;
+            }
+                
+
+            int end = arr.Length - 1;
+            while (arr[end] > arr[end - 1])
+                end--;
+
+            return end - start + 1;
+        }
+
         /// <summary>
         /// Given two strings containing backspaces (identified by the character ‘#’), check if the two strings are equal.
         /// </summary>

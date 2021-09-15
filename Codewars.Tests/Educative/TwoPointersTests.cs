@@ -7,6 +7,15 @@ namespace Tests.Educative
     public class TwoPointersTests
     {
         [Fact]
+        public void ShortestWindowSort()
+        {
+            Assert.Equal(5, TwoPointers.ShortestWindowSort(new int[] { 1, 2, 5, 3, 7, 10, 9, 12 }));
+            Assert.Equal(4, TwoPointers.ShortestWindowSort(new int[] { 1, 3, 2, 0, -1, 7, 10 }));
+            Assert.Equal(0, TwoPointers.ShortestWindowSort(new int[] { 1, 2, 3 }));
+            Assert.Equal(3, TwoPointers.ShortestWindowSort(new int[] { 3, 2, 1 }));
+        }
+
+        [Fact]
         public void BackspaceCompare()
         {
             Assert.True(TwoPointers.BackspaceCompare("xy#z", "xzz#"));
