@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Codewars\Codewars.csproj" />
     <ProjectReference Include="..\Educative\Educative.csproj" />
+    <ProjectReference Include="..\Others\Others.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +30,6 @@
     <None Remove="Codewars\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Educative\" />
     <Folder Include="Codewars\" />
   </ItemGroup>
 </Project>
