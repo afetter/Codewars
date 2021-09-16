@@ -7,6 +7,23 @@ namespace Tests.Educative
     public class FastSlowPointersTests
     {
         [Fact]
+        public void Middle()
+        {
+            ListNode head = new ListNode(1);
+            head.Next = new ListNode(2);
+            head.Next.Next = new ListNode(3);
+            head.Next.Next.Next = new ListNode(4);
+            head.Next.Next.Next.Next = new ListNode(5);
+            Assert.Equal(3, FastSlowPointers.MiddleOfLinkedList(head).Value);
+
+            head.Next.Next.Next.Next.Next = new ListNode(6);
+            Assert.Equal(4, FastSlowPointers.MiddleOfLinkedList(head).Value);
+
+            head.Next.Next.Next.Next.Next.Next = new ListNode(7);
+            Assert.Equal(4, FastSlowPointers.MiddleOfLinkedList(head).Value);
+        }
+
+        [Fact]
         public void FindHappyNumber()
         {
             Assert.True(FastSlowPointers.HappyNumber(23));
