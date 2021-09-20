@@ -11,13 +11,65 @@ namespace Tests.Educative
 {
     public class CyclicSortTests
     {
+
+        [Fact]
+        public void FindCorruptNums()
+        {
+            int[] arr = new int[] { 3, 1, 2, 5, 2 };
+
+            var obj1Str = JsonConvert.SerializeObject(new int[] {2,4});
+            var obj2Str = JsonConvert.SerializeObject(CyclicSort.FindCorruptNums(arr));
+
+            Assert.Equal(obj1Str, obj2Str);
+
+
+            arr = new int[] { 3, 1, 2, 3, 6, 4 };
+
+            obj1Str = JsonConvert.SerializeObject(new int[] { 3,5 });
+            obj2Str = JsonConvert.SerializeObject(CyclicSort.FindCorruptNums(arr));
+
+            Assert.Equal(obj1Str, obj2Str);
+        }
+
+        [Fact]
+        public void FindDuplicate()
+        {
+            int[] arr = new int[] { 1, 4, 4, 3, 2 };
+
+            Assert.Equal(4, CyclicSort.FindDuplicate(arr));
+
+
+            arr = new int[] { 2, 1, 3, 3, 5, 4 };
+            Assert.Equal(3, CyclicSort.FindDuplicate(arr));
+
+            arr = new int[] { 2, 4, 1, 4, 4 };
+            Assert.Equal(4, CyclicSort.FindDuplicate(arr));
+        }
+
         [Fact]
         public void AllMissingNumbers()
         {
             int[] arr = new int[] { 2, 3, 1, 8, 2, 3, 5, 1 };
-            Assert.Equal(2, CyclicSort.MissingNumber(arr));
 
-            Assert.Equal(2, CyclicSort.MissingNumber(arr));
+            var obj1Str = JsonConvert.SerializeObject(new int[] { 4, 6, 7 });
+            var obj2Str = JsonConvert.SerializeObject(CyclicSort.AllMissingNumbers(arr));
+
+            Assert.Equal(obj1Str, obj2Str);
+
+
+            arr = new int[] { 2, 4, 1, 2 };
+
+            obj1Str = JsonConvert.SerializeObject(new int[] { 3 });
+            obj2Str = JsonConvert.SerializeObject(CyclicSort.AllMissingNumbers(arr));
+
+            Assert.Equal(obj1Str, obj2Str);
+
+            arr = new int[] { 2, 3, 2, 1 };
+
+            obj1Str = JsonConvert.SerializeObject(new int[] { 4 });
+            obj2Str = JsonConvert.SerializeObject(CyclicSort.AllMissingNumbers(arr));
+
+            Assert.Equal(obj1Str, obj2Str);
         }
         [Fact]
         public void MissingNumber()

@@ -8,8 +8,14 @@ namespace Educative
 {
     public static class CyclicSort
     {
-
-        public static int[] AllMissingNumbers(int[] nums)
+        /// <summary>
+        /// We are given an unsorted array containing ‘n’ numbers taken from the range 1 to ‘n’. The array 
+        /// originally contained all the numbers from 1 to ‘n’, but due to a data error, one of the 
+        /// numbers got duplicated which also resulted in one number going missing. Find both these numbers.
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int[] FindCorruptNums(int[] nums)
         {
             var result = new List<int>();
             int i = 0;
@@ -24,8 +30,63 @@ namespace Educative
 
             // find the first number missing from its index, that will be our required number
             for (i = 0; i < nums.Length; i++)
-                if (nums[i] != i)
-                    result.Add(i);
+                if (nums[i] != i + 1)
+                    return new int[] { nums[i], i + 1 };
+
+            return new int[] { -1, -1 };
+        }
+
+        /// <summary>
+        /// We are given an unsorted array containing ‘n+1’ numbers taken from the range 1 to ‘n’. 
+        /// The array has only one duplicate but it can be repeated multiple times. Find that 
+        /// duplicate number without using any extra space. You are, however, allowed to 
+        /// modify the input array.
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static int FindDuplicate(int[] nums)
+        {
+            int i = 0;
+            while (i < nums.Length)
+            {
+                int j = nums[i] - 1;
+                if (nums[i] != nums[j])
+                    swap(nums, i, j);
+                else
+                    i++;
+            }
+
+            // find the first number missing from its index, that will be our required number
+            for (i = 0; i < nums.Length; i++)
+                if (nums[i] != i + 1)
+                    return nums[i];
+
+            return -1;
+        }
+
+        /// <summary>
+        /// We are given an unsorted array containing numbers taken from the range 1 to ‘n’. The array 
+        /// can have duplicates, which means some numbers will be missing. Find all those missing numbers.
+        /// </summary>
+        /// <param name="nums"></param>
+        /// <returns></returns>
+        public static List<int> AllMissingNumbers(int[] nums)
+        {
+            var result = new List<int>();
+            int i = 0;
+            while (i < nums.Length)
+            {
+                int j = nums[i] - 1;
+                if (nums[i] != nums[j])
+                    swap(nums, i, j);
+                else
+                    i++;
+            }
+
+            // find the first number missing from its index, that will be our required number
+            for (i = 0; i < nums.Length; i++)
+                if (nums[i] != i + 1)
+                    result.Add(i + 1);
 
             return result;
         }
