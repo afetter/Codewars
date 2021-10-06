@@ -50,7 +50,8 @@ namespace Educative
         }
 
         /// <summary>
-        /// Given the head of a Singly LinkedList that contains a cycle, write a function to find the starting node of the cycle.
+        /// Given the head of a Singly LinkedList that contains a cycle, write
+        /// a function to find the starting node of the cycle.
         /// </summary>
         /// <param name="head"></param>
         /// <returns></returns>
