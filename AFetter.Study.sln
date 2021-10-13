@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Educative", "Educative\Educ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Others", "Others\Others.csproj", "{7F25AE15-19DE-40BE-99D1-F607E014BC39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRank", "HackerRank\HackerRank.csproj", "{9948FC04-E017-424C-9027-381F07E38067}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR", "HR\HR.csproj", "{1DB38DF0-3A9C-4F06-8730-76B5D1B706B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{7F25AE15-19DE-40BE-99D1-F607E014BC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F25AE15-19DE-40BE-99D1-F607E014BC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F25AE15-19DE-40BE-99D1-F607E014BC39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9948FC04-E017-424C-9027-381F07E38067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9948FC04-E017-424C-9027-381F07E38067}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9948FC04-E017-424C-9027-381F07E38067}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9948FC04-E017-424C-9027-381F07E38067}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB38DF0-3A9C-4F06-8730-76B5D1B706B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB38DF0-3A9C-4F06-8730-76B5D1B706B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB38DF0-3A9C-4F06-8730-76B5D1B706B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB38DF0-3A9C-4F06-8730-76B5D1B706B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
