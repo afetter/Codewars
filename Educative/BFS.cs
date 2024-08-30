@@ -110,6 +110,61 @@ namespace Educative
         }
     }
 
+// 8
+      static int maxSum = 0;
+     static void MaxFromRootToLeaf(Node node, int sum) {
+        if (node == null) return;
+		if (node.left == null && node.right == null)
+		{
+			maxSum = Math.Max(maxSum, sum + node.key);
+		}
+	   MaxFromRootToLeaf(node.left, sum + node.key);
+	   MaxFromRootToLeaf(node.right, sum + node.key);
+    }
+	
+	 static int MinValue = 1000;
+	 static int MaxValue = 0;
+     static void MinAndMaxValue(Node node) {
+        if (node == null) return;
+
+			MinValue = Math.Min(MinValue, node.key);
+			MaxValue = Math.Max(MaxValue, node.key);
+	
+	   MinAndMaxValue(node.left);
+	   MinAndMaxValue(node.right);
+    }
+	
+	//   124
+	// + 125
+	// +  13
+	// = 262
+	static int sunRootToLeaf = 0;
+	 static void SumRootToLeaf(Node node, int i) {
+        if (node == null) return;
+		if (node.left == null && node.right == null)
+		{
+			sunRootToLeaf += (i * 10 + node.key);
+		}
+	   SumRootToLeaf(node.left, i * 10 + node.key);
+	   SumRootToLeaf(node.right, i * 10 + node.key);
+    }
+
+    public static void Main()
+    {
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+		//root.left.left.left = new Node(4);
+		//MaxFromRootToLeaf(root, 0);
+        //Console.WriteLine(maxSum);
+		//SumRootToLeaf(root, 0);
+		MinAndMaxValue(root);
+		Console.WriteLine(MinValue);
+		Console.WriteLine(MaxValue);
+    }
+    
     public class TreeNode
     {
         public int Val { get; set; }
